@@ -1,0 +1,326 @@
+* GIT
+
+- Configurações Básicas
+
+git config --global user.name "Fulano da Silva"
+git config --global user.email "fulano@gmail.com"
+
+
+- Diretório em Repositório GIT
+
+git init
+
+
+- Situação dos Arquivos
+
+git status
+
+
+- Rastrear Arquivo
+
+git add "nomearquivo"
+git add .
+
+
+- Gravar Arquivo
+
+git commit -m "mensagem"
+
+
+- Verificar Alterações Realizadas
+
+git log
+
+
+- Projeto no GitHub
+
+git remote add origin https://github.com/fulanodasilva/citacoes.git
+
+
+- Enviando Alterações para o GitHub
+
+git push origin master
+
+
+- Obtendo Projeto do GitHub
+
+git clone https://github.com/fulanodasilva/citacoes.git
+
+
+- Listar Arquivos no Diretório
+
+ls -lha
+
+
+- Ignorar Arquivo
+
+Criar arquivo .gitignore no diretório principal do projeto
+
+
+- Rastrear e Commitar Arquivo de uma Vez
+
+git commit -a -m "mensagem"
+git commit -am "mensagem"
+
+
+- Remoção de Arquivo e Adição na Stage
+
+git rm "nome arquivo"
+
+
+- Renomear Arquivo
+
+git mv "nome atual" "nome novo"
+
+
+- Desfazendo Mudanças Não Rastreadas
+
+git checkout --"nome arquivo"
+
+
+- Removendo da Área de Stage
+
+git reset --"nome arquivo"
+
+
+- Descartando Todas as Mudanças (retira todos os arquivos da área de stage e desfaz todas as alterações no arquivo)
+
+git reset --hard "id commit"
+
+
+- Desfazendo Mudanças Já Comitadas
+
+git revert --no-edit "codigo commit"
+git reset --hard "código commit" -> o histório do repositório é reescrito
+
+
+- Criando Repositório Remoto
+
+git init --bare moveis-ecologicos.git
+
+
+- Adicionando Repositório Remoto
+
+git remote add "nome do repositório remoto" file://198.168.10.99/opt/repositorios/moveis-ecologicos.git
+
+
+- Listar Repositórios Remotos
+
+git remote
+git remote -v -> mostra a url
+
+
+- Alterar e Remover Repositório Remoto
+
+git remote rename servidor outronome
+git remote set-url servidor file://192.168.10.110/opt/repositorios/moveis-ecologicos.git
+
+
+- Enviar Commits para o Repositório Remoto
+
+git push servidor master
+
+
+- Clonar Repositório Remoto
+
+git clone file://192.168.10.99/opt/repositorios/moveis-ecologicos.git
+
+
+- Sincronizar Repositório Local
+
+git pull servidor master
+
+
+- Protocolo Local
+
+git clone file:///opt/repositorios/moveis-ecologicos.git -> "file://" pode ser omitido
+
+
+- Protocolo SSH
+
+usuario@servidor:/caminho/repositorio.git
+git clone root@192.168.10.99:/opt/repositorios/moveis-ecologicos.git
+
+
+- Protocolo GIT
+
+git clone git://192.168.10.99/opt/repositorios/moveis-ecologicos.git
+
+
+- Protocolo HTTP/HTPPS
+
+git clone http://192.168.10.99/opt/repositorios/moveis-ecologicos.git
+git clone https://192.168.10.99/opt/repositorios/moveis-ecologicos.git
+
+
+- Ferramenta Merge
+
+git mergetool
+git config --global merge.tool meld
+
+
+- Alterar Comentário do Último Commit 
+
+git commit --amend -m "mensagem"
+
+
+- Salvando Temporariamente
+
+git stash
+
+
+- Listar Stashes
+
+git stash list
+
+
+- Recuperar Modificação Salva (do mais recente para o mais antigo)
+
+git stash pop
+
+
+- Limpar Arquivos Untracked
+
+git clean -f
+
+
+
+
+
+
+
+
+
+
+* Log
+
+- Dois Últimos Commits
+
+git log -n 2
+
+
+- Resumo
+
+git log --oneline
+
+
+- Linhas Adicionadas e Removidas
+
+git log --stat
+
+
+- Revisar Modificação Efetuada
+
+git diff
+git diff --staged -> diferença entre arquivos na área de stage e a última versão comitaada
+
+
+- Exibir Alterações Fora da Área de Stage Como as de Dentro
+
+git log -n 1 --oneline
+git diff "código último commit"
+git diff head -> último commit efetuado
+
+
+- Diferença Entre Dois Commits Específicos
+
+git diff código1..código2
+git diff código~2
+
+
+
+
+
+
+
+
+
+
+* BRANCHES
+
+- Branch
+
+git branch
+git branch -v -> lita as branches com os commits associados
+git log --oneline --decorate --parents -> exibe o histório resumido do repositório com o commit para o qual a master estã apontando e os commits pai de cada commit
+
+
+- Criar Branch
+
+git branch "nome"
+
+
+- Trocar de Branch
+
+git checkout "nome branch"
+git checkout -b "nome" -> criar e trocar branch
+
+
+- Excluir Branch
+
+git branch -d "nome"
+git branch -D "nome" -> para excluir se já tiver feito algum commit
+
+
+- Verificar Branch Não Mesclada
+
+git branch --no-merged
+
+
+- Mesclar Alterações com Merge
+
+git merge "nome branch" -m "mensagem"
+
+
+- Listar Branches Remotas
+
+git branch -r
+
+
+- Listar Branches Remotas e Locais
+
+git branch -a 
+
+
+- Excluir Branch
+
+git branch -D "nome"
+git push oring :nome
+
+
+
+
+
+
+
+
+
+
+* TAGS
+
+- Criar Tag
+
+git tag v1.0
+
+
+- Listar Tags
+
+git tag
+
+
+- Excluir Tag
+
+git tag -d "nome"
+
+
+- Tags Anotadas
+
+git tag -a v1.1 -m "mensagem"
+git show -s v1.1 -> mostra informações da tag
+git push origin v1.0 -> compartilha a tag
+git push origin --tags -> compartilha todas as tags
+
+
+- Enviar Branch para Repositório Remoto
+
+git push origin "nome branch"
