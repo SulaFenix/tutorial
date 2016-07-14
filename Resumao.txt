@@ -1,0 +1,19 @@
+
+git status -> você vê como estão as coisas
+git add -> passa a monitorar a pasta/arquivo
+git commit -> pasta/arquivo sai do stage para o local
+git commit -am -> "comentários"
+git config --global user.email "email"
+git config --global user.name "usuário"
+git log 
+git push origin master
+git remote -> nome do repositório de origem
+git remote -v -> mostra os endereços
+git pull -> pega do remoto
+rm -rf .git* -> exclui o repositório
+git rm "arquivo" -> exclui do remoto
+git rm --cached "arquivo" -> exclui do repositório, mas mantém na máquina
+git clone git@192.168.0.66:raquel/golivedocs.git
+git remote add origin git@192.168.0.66:raquel/golivedocs.git
+git pull git@192.168.0.66:raquel/golivedocs.git
+git checkout "nomearquivo" -> pega a versão do repositório e sobrecreve o meu
