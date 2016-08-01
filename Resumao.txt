@@ -17,3 +17,13 @@ git clone git@192.168.0.66:raquel/golivedocs.git
 git remote add origin git@192.168.0.66:raquel/golivedocs.git
 git pull git@192.168.0.66:raquel/golivedocs.git
 git checkout "nomearquivo" -> pega a versão do repositório e sobrecreve o meu
+
+
+
+
+
+Passos iniciais:
+
+git init
+git remote add origin
+git pull origin master
