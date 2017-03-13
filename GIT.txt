@@ -1,17 +1,17 @@
 * GIT
 
-- Configurações Básicas
+- ConfiguraÃ§Ãµes BÃ¡sicas
 
 git config --global user.name "Fulano da Silva"
 git config --global user.email "fulano@gmail.com"
 
 
-- Diretório em Repositório GIT
+- DiretÃ³rio em RepositÃ³rio GIT
 
 git init
 
 
-- Situação dos Arquivos
+- SituaÃ§Ã£o dos Arquivos
 
 git status
 
@@ -27,7 +27,7 @@ git add .
 git commit -m "mensagem"
 
 
-- Verificar Alterações Realizadas
+- Verificar AlteraÃ§Ãµes Realizadas
 
 git log
 
@@ -37,7 +37,7 @@ git log
 git remote add origin https://github.com/fulanodasilva/citacoes.git
 
 
-- Enviando Alterações para o GitHub
+- Enviando AlteraÃ§Ãµes para o GitHub
 
 git push origin master
 
@@ -47,14 +47,14 @@ git push origin master
 git clone https://github.com/fulanodasilva/citacoes.git
 
 
-- Listar Arquivos no Diretório
+- Listar Arquivos no DiretÃ³rio
 
 ls -lha
 
 
 - Ignorar Arquivo
 
-Criar arquivo .gitignore no diretório principal do projeto
+Criar arquivo .gitignore no diretÃ³rio principal do projeto
 
 
 - Rastrear e Commitar Arquivo de uma Vez
@@ -63,7 +63,7 @@ git commit -a -m "mensagem"
 git commit -am "mensagem"
 
 
-- Remoção de Arquivo e Adição na Stage
+- RemoÃ§Ã£o de Arquivo e AdiÃ§Ã£o na Stage
 
 git rm "nome arquivo"
 
@@ -73,60 +73,60 @@ git rm "nome arquivo"
 git mv "nome atual" "nome novo"
 
 
-- Desfazendo Mudanças Não Rastreadas
+- Desfazendo MudanÃ§as NÃ£o Rastreadas
 
 git checkout --"nome arquivo"
 
 
-- Removendo da Área de Stage
+- Removendo da Ãrea de Stage
 
 git reset --"nome arquivo"
 
 
-- Descartando Todas as Mudanças (retira todos os arquivos da área de stage e desfaz todas as alterações no arquivo)
+- Descartando Todas as MudanÃ§as (retira todos os arquivos da Ã¡rea de stage e desfaz todas as alteraÃ§Ãµes no arquivo)
 
 git reset --hard "id commit"
 
 
-- Desfazendo Mudanças Já Comitadas
+- Desfazendo MudanÃ§as JÃ¡ Comitadas
 
 git revert --no-edit "codigo commit"
-git reset --hard "código commit" -> o histório do repositório é reescrito
+git reset --hard "cÃ³digo commit" -> o histÃ³rio do repositÃ³rio Ã© reescrito
 
 
-- Criando Repositório Remoto
+- Criando RepositÃ³rio Remoto
 
 git init --bare moveis-ecologicos.git
 
 
-- Adicionando Repositório Remoto
+- Adicionando RepositÃ³rio Remoto
 
-git remote add "nome do repositório remoto" file://198.168.10.99/opt/repositorios/moveis-ecologicos.git
+git remote add "nome do repositÃ³rio remoto" file://198.168.10.99/opt/repositorios/moveis-ecologicos.git
 
 
-- Listar Repositórios Remotos
+- Listar RepositÃ³rios Remotos
 
 git remote
 git remote -v -> mostra a url
 
 
-- Alterar e Remover Repositório Remoto
+- Alterar e Remover RepositÃ³rio Remoto
 
 git remote rename servidor outronome
 git remote set-url servidor file://192.168.10.110/opt/repositorios/moveis-ecologicos.git
 
 
-- Enviar Commits para o Repositório Remoto
+- Enviar Commits para o RepositÃ³rio Remoto
 
 git push servidor master
 
 
-- Clonar Repositório Remoto
+- Clonar RepositÃ³rio Remoto
 
 git clone file://192.168.10.99/opt/repositorios/moveis-ecologicos.git
 
 
-- Sincronizar Repositório Local
+- Sincronizar RepositÃ³rio Local
 
 git pull servidor master
 
@@ -159,7 +159,7 @@ git mergetool
 git config --global merge.tool meld
 
 
-- Alterar Comentário do Último Commit 
+- Alterar ComentÃ¡rio do Ãšltimo Commit 
 
 git commit --amend -m "mensagem"
 
@@ -174,7 +174,7 @@ git stash
 git stash list
 
 
-- Recuperar Modificação Salva (do mais recente para o mais antigo)
+- Recuperar ModificaÃ§Ã£o Salva (do mais recente para o mais antigo)
 
 git stash pop
 
@@ -194,7 +194,7 @@ git clean -f
 
 * Log
 
-- Dois Últimos Commits
+- Dois Ãšltimos Commits
 
 git log -n 2
 
@@ -209,23 +209,31 @@ git log --oneline
 git log --stat
 
 
-- Revisar Modificação Efetuada
+- Revisar ModificaÃ§Ã£o Efetuada
 
 git diff
-git diff --staged -> diferença entre arquivos na área de stage e a última versão comitaada
+git diff --staged -> diferenÃ§a entre arquivos na Ã¡rea de stage e a Ãºltima versÃ£o comitaada
 
 
-- Exibir Alterações Fora da Área de Stage Como as de Dentro
+- Exibir AlteraÃ§Ãµes Fora da Ãrea de Stage Como as de Dentro
 
 git log -n 1 --oneline
-git diff "código último commit"
-git diff head -> último commit efetuado
+git diff "cÃ³digo Ãºltimo commit"
+git diff head -> Ãºltimo commit efetuado
 
 
-- Diferença Entre Dois Commits Específicos
+- DiferenÃ§a Entre Dois Commits EspecÃ­ficos
 
-git diff código1..código2
-git diff código~2
+git diff cÃ³digo1..cÃ³digo2
+git diff cÃ³digo~2
+
+
+- Todo o log de um arquivo
+git log --all -- <arquivo>
+
+
+- Todos os arquivos deletados
+git log --diff-filter=D --summary | grep delete
 
 
 
@@ -242,7 +250,7 @@ git diff código~2
 
 git branch
 git branch -v -> lita as branches com os commits associados
-git log --oneline --decorate --parents -> exibe o histório resumido do repositório com o commit para o qual a master estã apontando e os commits pai de cada commit
+git log --oneline --decorate --parents -> exibe o histÃ³rio resumido do repositÃ³rio com o commit para o qual a master estÃ£ apontando e os commits pai de cada commit
 
 
 - Criar Branch
@@ -259,15 +267,15 @@ git checkout -b "nome" -> criar e trocar branch
 - Excluir Branch
 
 git branch -d "nome"
-git branch -D "nome" -> para excluir se já tiver feito algum commit
+git branch -D "nome" -> para excluir se jÃ¡ tiver feito algum commit
 
 
-- Verificar Branch Não Mesclada
+- Verificar Branch NÃ£o Mesclada
 
 git branch --no-merged
 
 
-- Mesclar Alterações com Merge
+- Mesclar AlteraÃ§Ãµes com Merge
 
 git merge "nome branch" -m "mensagem"
 
@@ -316,11 +324,11 @@ git tag -d "nome"
 - Tags Anotadas
 
 git tag -a v1.1 -m "mensagem"
-git show -s v1.1 -> mostra informações da tag
+git show -s v1.1 -> mostra informaÃ§Ãµes da tag
 git push origin v1.0 -> compartilha a tag
 git push origin --tags -> compartilha todas as tags
 
 
-- Enviar Branch para Repositório Remoto
+- Enviar Branch para RepositÃ³rio Remoto
 
 git push origin "nome branch"
